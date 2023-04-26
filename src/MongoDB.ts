@@ -67,7 +67,7 @@ export async function getMongoDb() {
     await client.connect()
     log.info('Connected!')
 
-    const db = client.db()
+    const db = client.db("tasks")
     const tasks = db.collection<TaskSchema>('tasks')
     tasks.createIndex({ repositoryId: 1 })
 
